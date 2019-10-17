@@ -9,7 +9,7 @@ class ServiceSchema extends Schema {
       table.increments();
       table.string('name', 255).notNullable();
       table.number('price', 25).notNullable();
-      table.number('quantity', 25).notNullable();
+      table.number('quantity', 25).notNullable().defaultTo(1);
       table.date('due_date', 100).notNullable();
       table.boolean('paid').notNullable().defaultTo(false);
 
