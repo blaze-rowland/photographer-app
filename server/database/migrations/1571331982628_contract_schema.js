@@ -10,7 +10,7 @@ class ContractSchema extends Schema {
       table.date('date_of_appointment', 100).notNullable();
       table.boolean('signed').notNullable().defaultTo(false);
 
-      table.number('service_id', 25).notNullable();
+      table.integer('service_id', 25).notNullable();
       table.timestamps();
     });
   }

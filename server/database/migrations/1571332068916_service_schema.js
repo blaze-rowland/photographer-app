@@ -8,12 +8,12 @@ class ServiceSchema extends Schema {
     this.create('services', (table) => {
       table.increments();
       table.string('name', 255).notNullable();
-      table.number('price', 25).notNullable();
-      table.number('quantity', 25).notNullable().defaultTo(1);
+      table.integer('price', 25).notNullable();
+      table.integer('quantity', 25).notNullable().defaultTo(1);
       table.date('due_date', 100).notNullable();
       table.boolean('paid').notNullable().defaultTo(false);
 
-      table.number('client_id', 25).notNullable();
+      table.integer('client_id', 25).notNullable();
       table.timestamps();
     });
   }

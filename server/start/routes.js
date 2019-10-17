@@ -16,10 +16,14 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.group(() => {
+  Route.post('register', 'UserController.register');
+  Route.post('login', 'UserController.login');
+}).prefix('auth');
 
 Route.group(() => {
-  Route.resource('billing', 'BillingController');
+  Route.resource('billing', 'BillingController').middleware('auth');
+  Route.resource('client', 'ClientController').middleware('auth');
+  Route.resource('contract', 'ContractController').middleware('auth');
+  Route.resource('service', 'ServiceController').middleware('auth');
 }).prefix('api');

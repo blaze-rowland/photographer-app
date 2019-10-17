@@ -8,8 +8,9 @@ class BillingSchema extends Schema {
     this.create('billings', (table) => {
       table.increments();
       table.boolean('completed').notNullable().defaultTo(false);
+      table.boolean('viewed').notNullable().defaultTo(false);
 
-      table.number('service_id', 25).notNullable();
+      table.integer('service_id', 25).notNullable();
       table.timestamps();
     });
   }
