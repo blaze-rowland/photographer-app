@@ -13,7 +13,7 @@ class ServiceSchema extends Schema {
       table.date('due_date', 100).notNullable();
       table.boolean('paid').notNullable().defaultTo(false);
 
-      // table.integer('client_id', 25).unsigned().references('id').inTable('clients');
+      table.integer('client_id', 25).unsigned().references('id').inTable('clients');
       table.timestamps();
     });
   }
