@@ -132,7 +132,7 @@ class ClientController {
     // Find client based on ID
     const client = await Client.find(id);
 
-    // Make sure the user is authenticated anr project exists
+    // Make sure the user is authenticated and project exists
     AuthorizationService.verifyPermission(client, user);
 
     // Delete client from database

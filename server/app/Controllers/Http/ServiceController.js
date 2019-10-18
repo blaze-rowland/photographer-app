@@ -7,8 +7,9 @@
 /**
  * Resourceful controller for interacting with services
  */
+const Database = use('Database');
 const Service = use('App/Models/Service');
-const AuthorizationService = use('App/Services/AuthorizationService');
+const ClientAuthorizationService = use('App/Services/ClientAuthorizationService');
 
 class ServiceController {
   /**
@@ -20,12 +21,18 @@ class ServiceController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ auth }) {
+  async index ({ auth, params }) {
     // Get Authenticated User
     const user = await auth.getUser();
 
-    // Return user's services
-    return await user.clients().services().fetch();
+    const clientId = params.clientId;
+
+    const services = await Database
+      .table('services')
+      .select('*')
+      .where('client_id', clientId);
+
+    return services;
   }
 
 
@@ -42,59 +49,17 @@ class ServiceController {
     const user = await auth.getUser();
 
     // Retrieve new service from payload
-    const { name, price, quantity, dueDate } = request.all();
-
-    const service = new Service();
-
-    service.fill({
+    const { name, price, quantity, dueDate, clientId } = request.all();
+    
+    const service = await Service.create({
       name,
       price,
       quantity,
-      due_date: dueDate
+      due_date: dueDate,
+      client_id: clientId
     });
 
-    // await user.clients().services().save(service);
-    const clients = await user.clients().fetch();
-
-    // TODO: Figure out how to get services from clients table
-    
-    // response.status(200).send(clients.id);
-
-    let clientArr = [];
-    
-    await Array.from(clients).forEach(client => {
-      clientArr.push(client.id);
-    });
-
-    return response.status(200).send(clientArr);
-    
-
-
-    // return service;
-  }
-
-  /**
-   * Display a single service.
-   * GET services/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async show ({ params, request, response, view }) {
-  }
-
-  /**
-   * Render a form to update an existing service.
-   * GET services/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
+    return response.status(200).send(service);
   }
 
   /**
@@ -105,7 +70,42 @@ class ServiceController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ({ params, request, response }) {
+  async update ({ params, request, response, auth }) {
+    // Get authenticated user
+    const user = await auth.getUser();
+    
+    // Get id of Service from URL
+    const id = params.id;
+    const { name, price, quantity, dueDate, paid, clientId } = request.all();
+
+    // Find service based on ID
+    const service = await Service.find(id);
+
+    // Get client
+    const client = await Database
+      .table('clients')
+      .select('*')
+      .where('id', service.client_id)
+      .first();
+
+    // Make sure the user is authenticated and service exists
+    ClientAuthorizationService.verifyPermission(service, client, user);
+
+    // Take the body and merge it into the service
+    service.merge({
+      name,
+      price,
+      quantity,
+      due_date: dueDate,
+      paid, 
+      client_id: clientId
+    });
+
+    // Update the service and save
+    await service.save();
+
+    // Return updated service
+    return service;
   }
 
   /**
@@ -116,7 +116,34 @@ class ServiceController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy ({ params, request, response, auth }) {
+      // Get authenticated user
+      const user = await auth.getUser();
+    
+      // Get id of Service from URL
+      const id = params.id;
+  
+      // Find service based on ID
+      const service = await Service.find(id);
+  
+      // Get client
+      const client = await Database
+        .table('clients')
+        .select('*')
+        .where('id', service.client_id)
+        .first();
+  
+      // Make sure the user is authenticated and service exists
+      ClientAuthorizationService.verifyPermission(service, client, user);
+  
+      // Delete service from database
+      await service.delete();
+  
+      // Update the service and save
+      await service.save();
+  
+      // Return deleted service
+      return service;
   }
 }
 

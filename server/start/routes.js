@@ -24,6 +24,14 @@ Route.group(() => {
 Route.group(() => {
   Route.resource('billing', 'BillingController').middleware('auth');
   Route.resource('client', 'ClientController').middleware('auth');
-  Route.resource('contract', 'ContractController').middleware('auth');
-  Route.resource('service', 'ServiceController').middleware('auth');
+
+  Route.get('service/:clientId', 'ServiceController.index').middleware('auth');
+  Route.post('service', 'ServiceController.store').middleware('auth');
+  Route.patch('service/:id', 'ServiceController.update').middleware('auth');
+  Route.delete('service/:id', 'ServiceController.destroy').middleware('auth');
+
+  Route.get('contract/:serviceId', 'ContractController.index').middleware('auth');
+  Route.post('contract', 'ContractController.store').middleware('auth');
+  Route.patch('contract/:id', 'ContractController.update').middleware('auth');
+  Route.delete('contract/:id', 'ContractController.destroy').middleware('auth');
 }).prefix('api');
