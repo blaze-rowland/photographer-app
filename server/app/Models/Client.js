@@ -5,7 +5,9 @@ const Model = use('Model')
 
 class Client extends Model {
     users() {
-        return this.belongsToMany('App/Models/User');
+        return this
+            .belongsToMany('App/Models/User')
+            .pivotTable('client_user');
     }
 
     services() {
