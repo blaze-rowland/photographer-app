@@ -10,7 +10,7 @@ class BillingSchema extends Schema {
       table.boolean('completed').notNullable().defaultTo(false);
       table.boolean('viewed').notNullable().defaultTo(false);
 
-      table.integer('service_id', 25).notNullable();
+      // table.integer('service_id', 25).unsigned().references('id').inTable('services');
       table.timestamps();
     });
   }

@@ -12,7 +12,7 @@ class ClientSchema extends Schema {
       table.string('address', 255).notNullable();
       table.string('phone_number', 25).notNullable();
 
-      table.integer('user_id', 25).notNullable();
+      table.integer('user_id', 25).unsigned().references('id').inTable('users');
       table.timestamps();
     });
   }
