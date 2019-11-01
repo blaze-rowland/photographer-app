@@ -1,0 +1,41 @@
+@import '~src/assets/styles/abstracts/index';
+
+.auth-nav {
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem 3.6em;
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+
+  @include e(list) {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  @include e(item) {
+    font-size: 1.7rem;
+
+    &:not(:last-of-type) {
+      margin-right: 2rem;
+    }
+
+    a {
+      border-bottom: 2px solid transparent;
+
+      &.active {
+        border-bottom-color: var(--white);
+        color: var(--white);
+        font-weight: 600;
+      }
+    }
+
+    @include m(brand) {
+      font-weight: 600;
+    }
+  }
+}
+
+

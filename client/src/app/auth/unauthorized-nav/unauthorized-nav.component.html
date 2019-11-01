@@ -1,0 +1,22 @@
+<nav class="auth-nav">
+  <ul class="auth-nav__list">
+    <li class="auth-nav__item auth-nav__item--brand">
+      <a [routerLink]="['/auth/register']"></a>
+      {{ appInfo.title }}
+    </li>
+  </ul>
+
+  <ul class="auth-nav__list">
+    <li class="auth-nav__item">
+      <a [routerLink]="['/auth/login']" routerLinkActive="active">
+        Login
+      </a>
+    </li>
+
+    <li class="auth-nav__item">
+      <a [routerLink]="['/auth/register']" routerLinkActive="active">
+        Register
+      </a>
+    </li>
+  </ul>
+</nav>

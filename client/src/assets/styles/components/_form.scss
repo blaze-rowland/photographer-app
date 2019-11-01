@@ -1,0 +1,17 @@
+.form {
+  @include c(group) {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-of-type) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  @include c(control) {
+    border: 1px solid var(--off-white);
+    padding: 0.5em;
+    text-index: 0.5em;
+    transition: 0.2s ease;
+  }
+}
