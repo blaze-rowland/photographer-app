@@ -1,0 +1,19 @@
+@import '~src/assets/styles/abstracts/index';
+
+.page {
+  @include c(container) {
+    // background-color: var(--color-gray-200);
+    background: linear-gradient(-20deg, var(--color-gray-200), var(--color-gray-100));
+    padding-top: 2rem;
+    padding-left: var(--app-nav-width);
+    min-height: 100vh;
+
+    &.active { padding-left: var(--app-nav-width-active); }
+  }
+
+  @include c(title) {
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+    margin-top: 0;
+  }
+}

@@ -1,8 +1,7 @@
 @import '~src/assets/styles/abstracts/index';
 
 .register {
-  background-color: var(--color-primary);
-  background: linear-gradient(to bottom right, var(--color-primary) 40%, var(--color-primary-darker));
+  background: linear-gradient(-20deg, var(--color-secondary), var(--color-primary));
 
   .container {
     align-items: center;

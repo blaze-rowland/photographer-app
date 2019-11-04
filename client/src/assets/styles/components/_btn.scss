@@ -21,4 +21,14 @@
     background-color: var(--color-primary);
     color: var(--white);
   }
+
+  @include m(secondary) {
+    background-color: var(--color-light-purple);
+    color: var(--white);
+  }
+
+  @include m(tertiary) {
+    background-color: var(--color-green-400);
+    color: var(--white);
+  }
 }

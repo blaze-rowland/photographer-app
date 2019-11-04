@@ -1,0 +1,66 @@
+@import '~src/assets/styles/abstracts/index';
+
+.nav {
+  background: linear-gradient(-20deg, var(--color-secondary), var(--color-primary));
+  bottom: 0;
+  box-shadow: inset -4px 0 1.6rem 0.6rem rgba(0, 0, 0, 0.1);
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: var(--app-nav-width);
+
+  &.active {
+    width: var(--app-nav-width-active);
+  }
+
+  @include e(list) {
+    list-style-type: none;
+    padding: 0;
+
+    @include m(bottom) {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  @include e(item) {
+    align-items: center;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 2rem 2.2rem;
+
+    &:not(.nav__item--brand) {
+      transition: 0.2s ease;
+
+      &:hover, &:focus {
+        background-color: darken(#4e4376, 1%);
+      }
+    }
+
+    @include m(brand) {
+      background-color: var(--color-primary-lighter);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.6);
+
+      &.active {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  @include e(icon) {
+    font-size: 1.7rem;
+    margin-right: 0.8rem;
+    position: relative;
+    top: -2px;
+  }
+}

@@ -3,17 +3,20 @@
   --font-primary: 'Nunito', sans-serif;
 
   // Color - Branding
-  --color-primary: #FF8678;
-  --color-primary-darker: #F46B6A;
+  // --color-primary: #FF8678;
+  --color-primary: #4e4376;
+  --color-primary-lighter: #5E5D86;
+
+  --color-secondary: #2b5876;
 
   --color-dark-purple: #031927;
-  --color-light-purple: #031927;
+  --color-light-purple: #123952;
 
 
 
   // Color - Basic
   --white: #fff;
-  --black: #1a1a1a;
+  --black: #2c2c2c;
 
   --off-white: #FFFDFC;
 
@@ -118,6 +121,9 @@
   --color-pink-900: #702459;
 
   // System variables
-  --container-width: 1280px;
+  // --container-width: 1280px;
+  --container-width: 1024px;
+  --app-nav-width-active: 280px;
+  --app-nav-width: 90px;
 }
 

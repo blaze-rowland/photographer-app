@@ -1,0 +1,25 @@
+<nav class="nav active">
+  <ul class="nav__list">
+    <li class="nav__item nav__item--brand">
+      {{ appInfo.title }}
+    </li>
+
+    <li class="nav__item">
+      <i class="nav__icon fas fa-clipboard-check"></i>
+      <a
+        [routerLink]="['/user/dashboard']"
+        routerLinkActive="active">
+        Dashboard
+      </a>
+    </li>
+  </ul>
+
+  <ul class="nav__list nav__list--bottom">
+    <li class="nav__item">
+        <i class="nav__icon fas fa-sign-out-alt"></i>
+        <a href="javascript:void(0)" (click)="onLogout()">
+          Logout
+        </a>
+    </li>
+  </ul>
+</nav>
