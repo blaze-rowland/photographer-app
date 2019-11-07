@@ -3,14 +3,15 @@
 .badge {
   border-radius: 5px;
   color: var(--white);
+  font-weight: 600;
   max-width: fit-content;
   padding: 0.25em 1.5em;
 
   @include m(success) {
-    background: linear-gradient(to bottom right, var(--color-green-400), var(--color-green-300));
+    background: linear-gradient(to bottom right, var(--color-primary-lighter), var(--color-primary));
   }
 
   @include m(danger) {
-    background: linear-gradient(to bottom right, var(--color-primary), var(--color-primary-darker));
+    background: linear-gradient(to bottom right, var(--color-red), var(--color-red-darker));
   }
 }

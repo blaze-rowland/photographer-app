@@ -2,9 +2,9 @@
 
 .page {
   @include c(container) {
-    // background-color: var(--color-gray-200);
-    background: linear-gradient(-20deg, var(--color-gray-200), var(--color-gray-100));
-    padding-top: 2rem;
+    // background: linear-gradient(to bottom right, var(--color-gray-100) 35%, var(--color-gray-200));
+    background-color: var(--color-gray-100);
+    padding: 6rem 0;
     padding-left: var(--app-nav-width);
     min-height: 100vh;
 
