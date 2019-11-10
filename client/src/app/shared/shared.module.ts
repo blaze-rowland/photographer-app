@@ -8,7 +8,7 @@ import { AppNavComponent } from './app-nav/app-nav.component';
 @NgModule({
   declarations: [
     CommonLayoutComponent,
-    AppNavComponent
+    AppNavComponent,
   ],
   imports: [
     CommonModule,

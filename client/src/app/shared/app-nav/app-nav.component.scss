@@ -48,6 +48,19 @@
       font-weight: 700;
     }
 
+    @include m(tabbed) {
+      padding-left: 3rem;
+
+      &:hover, &:focus {
+        background-color: transparent !important;
+      }
+
+      .nav__icon {
+        font-size: 1.4rem;
+        top: -1px;
+      }
+    }
+
     a {
       color: rgba(255, 255, 255, 0.6);
 

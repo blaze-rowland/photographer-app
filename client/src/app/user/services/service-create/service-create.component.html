@@ -1,0 +1,65 @@
+<div class="container">
+  <h1 class="page-title">
+    Create Service
+  </h1>
+
+  <section class="client-create">
+    <div class="card">
+      <div class="card__body card__body--pdd-md">
+        <form (submit)="onSubmit()" class="form">
+          <div class="form-double mrg-bottom--15">
+              <div class="form-group">
+                <label for="name" class="form__label">Name</label>
+                <input
+                  type="text"
+                  class="form-control form-control--no-left-pdd"
+                  name="name"
+                  id="name"
+                  placeholder="Jane Doe"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form__label">Email</label>
+                <input
+                  type="email"
+                  class="form-control form-control--no-left-pdd"
+                  name="email"
+                  id="email"
+                  placeholder="jane.doe@example.com"
+                >
+              </div>
+          </div>
+
+          <div class="form-double mrg-bottom--15">
+            <div class="form-group">
+              <label for="phoneNumber" class="form__label">Phone Number</label>
+              <input
+                type="text"
+                class="form-control form-control--no-left-pdd"
+                name="phoneNumber"
+                id="placeholder"
+                placeholder="201-555-5555"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="address" class="form__label">Address</label>
+              <input
+                type="text"
+                class="form-control form-control--no-left-pdd"
+                name="address"
+                id="address"
+                placeholder="1600 Pennsylvania Ave NW, Washington, DC 20500"
+              >
+            </div>
+          </div>
+
+          <div class="display-flex justify-end">
+            <input type="submit" value="Create Service" class="btn btn--primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

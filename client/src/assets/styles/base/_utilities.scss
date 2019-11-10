@@ -35,7 +35,7 @@
 .display-flex { display: flex; }
 .display-inline-flex { display: inline-flex; }
 
-// Flex 
+// Flex
 .order-first	{ order: -9999; }
 .order-last	{ order: 9999; }
 .order-none	{ order: 0; }
@@ -108,6 +108,8 @@
     @include m(40) { margin-top: 40px; }
     @include m(45) { margin-top: 45px; }
     @include m(50) { margin-top: 50px; }
+    @include m(55) { margin-top: 55px; }
+    @include m(60) { margin-top: 60px; }
   }
 
   @include c(right) {
@@ -120,6 +122,8 @@
     @include m(40) { margin-right: 40px; }
     @include m(45) { margin-right: 45px; }
     @include m(50) { margin-right: 50px; }
+    @include m(55) { margin-right: 55px; }
+    @include m(60) { margin-right: 60px; }
   }
 
   @include c(bottom) {
@@ -132,6 +136,8 @@
     @include m(40) { margin-bottom: 40px; }
     @include m(45) { margin-bottom: 45px; }
     @include m(50) { margin-bottom: 50px; }
+    @include m(55) { margin-bottom: 55px; }
+    @include m(60) { margin-bottom: 60px; }
   }
 
   @include c(left) {
@@ -144,6 +150,8 @@
     @include m(40) { margin-left: 40px; }
     @include m(45) { margin-left: 45px; }
     @include m(50) { margin-left: 50px; }
+    @include m(55) { margin-left: 55px; }
+    @include m(60) { margin-left: 60px; }
   }
 
   @include c(horizon) {
@@ -156,6 +164,8 @@
     @include m(40) { margin: 0 40px; }
     @include m(45) { margin: 0 45px; }
     @include m(50) { margin: 0 50px; }
+    @include m(55) { margin: 0 55px; }
+    @include m(60) { margin: 0 60px; }
   }
 
   @include c(vertical) {
@@ -168,6 +178,8 @@
     @include m(40) { margin: 40px 0; }
     @include m(45) { margin: 45px 0; }
     @include m(50) { margin: 50px 0; }
+    @include m(55) { margin: 55px 0; }
+    @include m(60) { margin: 60px 0; }
   }
 }
 
@@ -183,6 +195,8 @@
     @include m(40) { padding-top: 40px; }
     @include m(45) { padding-top: 45px; }
     @include m(50) { padding-top: 50px; }
+    @include m(55) { padding-top: 55px; }
+    @include m(60) { padding-top: 60px; }
   }
 
   @include c(right) {
@@ -195,6 +209,8 @@
     @include m(40) { padding-right: 40px; }
     @include m(45) { padding-right: 45px; }
     @include m(50) { padding-right: 50px; }
+    @include m(55) { padding-right: 55px; }
+    @include m(60) { padding-right: 60px; }
   }
 
   @include c(bottom) {
@@ -207,6 +223,8 @@
     @include m(40) { padding-bottom: 40px; }
     @include m(45) { padding-bottom: 45px; }
     @include m(50) { padding-bottom: 50px; }
+    @include m(55) { padding-bottom: 55px; }
+    @include m(60) { padding-bottom: 60px; }
   }
 
   @include c(left) {
@@ -219,6 +237,8 @@
     @include m(40) { padding-left: 40px; }
     @include m(45) { padding-left: 45px; }
     @include m(50) { padding-left: 50px; }
+    @include m(55) { padding-left: 55px; }
+    @include m(60) { padding-left: 60px; }
   }
 
   @include c(horizon) {
@@ -231,6 +251,8 @@
     @include m(40) { padding: 0 40px; }
     @include m(45) { padding: 0 45px; }
     @include m(50) { padding: 0 50px; }
+    @include m(55) { padding: 0 55px; }
+    @include m(60) { padding: 0 60px; }
   }
 
   @include c(vertical) {
@@ -243,5 +265,7 @@
     @include m(40) { padding: 40px 0; }
     @include m(45) { padding: 45px 0; }
     @include m(50) { padding: 50px 0; }
+    @include m(55) { padding: 55px 0; }
+    @include m(60) { padding: 60px 0; }
   }
 }

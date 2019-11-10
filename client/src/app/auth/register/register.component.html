@@ -12,19 +12,43 @@
     <div class="right container">
       <form (submit)="onRegister(e)" class="register__form">
         <div class="form-group">
-          <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            class="form-control form-control--auth"
+          >
         </div>
 
         <div class="form-group">
-          <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            class="form-control form-control--auth"
+          >
         </div>
 
         <div class="form-group">
-          <input type="text" name="first-name" id="first-name" class="form-control" placeholder="First Name">
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            class="form-control form-control--auth"
+            placeholder="First Name"
+          >
         </div>
 
         <div class="form-group">
-          <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Last Name">
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            class="form-control form-control--auth"
+            placeholder="Last Name"
+          >
         </div>
 
         <input type="submit" class="btn btn--primary" value="Register">

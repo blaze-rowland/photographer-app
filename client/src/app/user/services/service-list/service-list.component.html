@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="client-list">
+      <div class="card">
+        <div class="card__title display-flex justify-between items-end">
+          <h3>Services</h3>
+          <a
+            [routerLink]="['/user/services/create']"
+            class="btn btn--tertiary"
+          >
+            Add Service
+          </a>
+        </div>
+        <div class="card__body">
+          <div class="table-overflow">
+            <table class="table table--in-card table-hover">
+              <thead>
+                <tr>
+                  <th>Service Name</th>
+                  <th>Client Name</th>
+                  <th>Due Date</th>
+                  <th class="text-center">Price</th>
+                  <th class="text-center">Paid</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Mini Session</td>
+                  <td>Jim Hall</td>
+                  <td>November 30th</td>
+                  <td class="text-center">
+                    $250
+                  </td>
+                  <td class="text-center">
+                    <span class="badge badge--danger">
+                      Not Paid
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Full Session</td>
+                  <td>Blaze Rowland</td>
+                  <td>November 14th</td>
+                  <td class="text-center">
+                    $400
+                  </td>
+                  <td class="text-center">
+                    <span class="badge badge--success">
+                      Paid
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Senior Session</td>
+                  <td>William Hall</td>
+                  <td>April 20th</td>
+                  <td class="text-center">
+                    $420
+                  </td>
+                  <td class="text-center">
+                    <span class="badge badge--success">
+                      Paid
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

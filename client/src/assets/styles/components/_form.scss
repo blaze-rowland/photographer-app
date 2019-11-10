@@ -1,4 +1,8 @@
 .form {
+  @include e(label) {
+    color: var(--color-gray-500);
+  }
+
   @include c(group) {
     display: flex;
     flex-direction: column;
@@ -9,9 +13,34 @@
   }
 
   @include c(control) {
-    border: 1px solid var(--off-white);
+    border: 0;
+    border-bottom: 2px solid var(--color-primary);
     padding: 0.5em;
     text-index: 0.5em;
     transition: 0.2s ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include m(auth) {
+      border: 1px solid var(--off-white);
+    }
+
+    @include m(no-left-pdd) {
+      padding-left: 0;
+    }
+  }
+
+  @include c(double) {
+    display: flex;
+
+    & > .form-group {
+      flex: calc(50% - 5rem);
+
+      &:not(:last-child) {
+        margin-right: 5rem;
+      }
+    }
   }
 }

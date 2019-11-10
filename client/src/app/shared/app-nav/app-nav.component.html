@@ -12,6 +12,46 @@
         Dashboard
       </a>
     </li>
+
+    <li class="nav__item">
+      <i class="nav__icon fas fa-user"></i>
+      <a
+        [routerLink]="['/user/clients']"
+        routerLinkActive="active"
+      >
+        Clients
+      </a>
+    </li>
+
+    <li class="nav__item nav__item--tabbed">
+      <i class="nav__icon fas fa-chevron-right"></i>
+      <a
+        [routerLink]="['/user/clients/create']"
+        routerLinkActive="active"
+      >
+        Create Client
+      </a>
+    </li>
+
+    <li class="nav__item">
+      <i class="nav__icon fas fa-briefcase"></i>
+      <a
+        [routerLink]="['/user/services']"
+        routerLinkActive="active"
+      >
+        Services
+      </a>
+    </li>
+
+    <li class="nav__item nav__item--tabbed">
+      <i class="nav__icon fas fa-chevron-right"></i>
+      <a
+        [routerLink]="['/user/services/create']"
+        routerLinkActive="active"
+      >
+        Create Service
+      </a>
+    </li>
   </ul>
 
   <ul class="nav__list nav__list--bottom">

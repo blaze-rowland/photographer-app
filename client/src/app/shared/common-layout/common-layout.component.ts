@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
-import { filter, map, mergeMap } from 'rxjs/operators'
+import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-common-layout',
@@ -16,13 +16,13 @@ export class CommonLayoutComponent implements OnInit {
       filter(event => event instanceof NavigationEnd),
       map(() => this.route),
       map(routes => {
-        while (route.firstChild) {
-          route = route.firstChild;
-          return route;
+        while (this.route.firstChild) {
+          this.route = this.route.firstChild;
+          return this.route;
         }
       }),
-      filter(routes => route.outlet === 'primary'),
-      mergeMap(routes => route.data)
+      filter(routes => this.route.outlet === 'primary'),
+      mergeMap(routes => this.route.data)
     ).subscribe(data =>
       this.pageTitle = data.title
     );
